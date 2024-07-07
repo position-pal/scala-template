@@ -1,0 +1,14 @@
+[versions]
+junit = "1.10.3"
+
+[libraries]
+scala-library = "org.scala-lang:scala3-library_3:3.4.2"
+scalatest = "org.scalatest:scalatest_3:3.2.19"
+junit-platform-engine = { module = "org.junit.platform:junit-platform-engine", version = "junit" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "junit" }
+scalatestplus-junit5 = "org.scalatestplus:junit-5-10_3:3.2.19.0"
+
+[bundles]
+scala-testing = [ "scalatest", "junit-platform-engine", "junit-platform-launcher", "scalatestplus-junit5" ]
+
+[plugins]
