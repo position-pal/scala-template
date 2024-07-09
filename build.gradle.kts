@@ -5,14 +5,18 @@ plugins {
     scala
 }
 
-subprojects {
+allprojects {
     group = "io.github.positionpal"
 
     repositories {
         mavenCentral()
     }
+}
 
-    apply(plugin = "scala")
+subprojects {
+    with(rootProject.libs.plugins) {
+        apply(plugin = "scala")
+    }
 
     with(rootProject.libs) {
         dependencies {
