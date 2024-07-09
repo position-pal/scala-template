@@ -2,20 +2,22 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
-    scala
+    id("scala")
+    alias(libs.plugins.gradle.scalafmt)
+    alias(libs.plugins.gradle.scalafix)
 }
 
 allprojects {
     group = "io.github.positionpal"
 
-    repositories {
-        mavenCentral()
-    }
-}
-
-subprojects {
     with(rootProject.libs.plugins) {
         apply(plugin = "scala")
+        apply(plugin = gradle.scalafmt.get().pluginId)
+        apply(plugin = gradle.scalafix.get().pluginId)
+    }
+
+    repositories {
+        mavenCentral()
     }
 
     with(rootProject.libs) {
@@ -36,4 +38,11 @@ subprojects {
             exceptionFormat = TestExceptionFormat.FULL
         }
     }
+
+    tasks.withType<ScalaCompile>().configureEach {
+        val reportUnusedCompilerOption = "-Wunused:all"
+        scalaCompileOptions.additionalParameters = listOf(reportUnusedCompilerOption)
+    }
+
+    tasks.check.get().dependsOn("checkScalafmtAll")
 }
