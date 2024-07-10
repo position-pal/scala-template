@@ -1,0 +1,62 @@
+name: Build, Test and Check action
+
+on:
+  push:
+    tags:
+      - '*'
+    branches-ignore:
+      - 'autodelivery**'
+      - 'bump-**'
+      - 'renovate/**'
+    paths-ignore:
+      - 'README.md'
+      - 'CHANGELOG.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - '.mergify.yml'
+      - 'renovate.json'
+  pull_request:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows, macos, ubuntu]
+        jvm-version: [ 11, 17, 21 ]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - name: Set up JDK ${{ matrix.jvm-version }}
+        uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9 # v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ matrix.jvm-version }}
+      - name: Assemble main and test classes
+        run: ./gradlew classes testClasses
+      - name: Test
+        run: ./gradlew test
+      - name: Check
+        run: ./gradlew check
+
+  success:
+    needs:
+      - build
+    if: >- # run if any needed job failed or if no needed job was cancelled
+      always() && (
+        contains(join(needs.*.result, ','), 'failure')
+        || !contains(join(needs.*.result, ','), 'cancelled')
+      )
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify no failures occurred in needed jobs
+        # if there are failures, false is executed and the job fails.
+        run: ${{ !contains(join(needs.*.result, ','), 'failure') }}
+
+  deploy:
+    needs:
+      - success
+    uses: ./.github/workflows/release.yml
+    if: github.ref_name == 'master' || github.ref_name == 'main'
+    secrets: inherit
