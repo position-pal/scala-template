@@ -6,5 +6,5 @@ import org.scalatest.matchers.should.Matchers.shouldBe
 
 class MainTest extends AnyFlatSpec with Matchers:
 
-    "A trivial test" should "pass" in:
-      true shouldBe true
+  "A trivial test" should "pass" in:
+    true shouldBe true
