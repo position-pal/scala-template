@@ -20,8 +20,7 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Get All Tags
-        run: git fetch --tags -f
+          fetch-tags: true
       - name: Find the version of Node from package.json
         id: node-version
         run: echo "version=$(jq -r .engines.node package.json)" >> $GITHUB_OUTPUT
