@@ -3,7 +3,7 @@ plugins {
     id("com.gradle.develocity") version "3.17.5"
 }
 
-rootProject.name = "Scala Template for Jvm"
+rootProject.name = "scala-template"
 
 include(
     "core",
