@@ -14,5 +14,4 @@ junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher
 scala-testing = [ "scalatest", "junit-platform-engine", "junit-platform-launcher", "scalatestplus-junit5" ]
 
 [plugins]
-gradle-scalafmt = "cz.augi.gradle.scalafmt:1.21.2"
-gradle-scalafix = "io.github.cosmicsilence.scalafix:0.2.2"
+scala-extras = "io.github.tassiluca.gradle-scala-extras:2.0.1"
