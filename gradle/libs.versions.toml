@@ -1,6 +1,6 @@
 [versions]
 scala = "3.4.2"
-scalatest = "3.2.19"
+scalatest = "3.3.0-SNAP4"
 junit = "1.10.3"
 
 [libraries]
