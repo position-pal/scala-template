@@ -13,15 +13,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  inspection:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo 'github.event_name = ${{ github.event_name }}'
-          echo 'github.event.pull_request.head.repo.full_name = ${{ github.event.pull_request.head.repo.full_name }}'
-          echo 'github.repository = ${{ github.repository }}'
-          echo 'github.head_ref = ${{ github.head_ref }}'
-
   dispatcher:
     runs-on: ubuntu-22.04
     if: >- # Prevents running the workflow twice on PR made by a branch of the same repository
@@ -57,10 +48,13 @@ jobs:
   success:
     needs:
       - build
-    if: >- # run if any needed job failed or if no needed job was cancelled
+    if: >- # run if at least one needed job has failed or all needed jobs have not been cancelled or skipped
       always() && (
         contains(join(needs.*.result, ','), 'failure')
-        || !contains(join(needs.*.result, ','), 'cancelled')
+        || (
+          !contains(join(needs.*.result, ','), 'cancelled') 
+          && !contains(join(needs.*.result, ','), 'skipped')
+        )
       )
     runs-on: ubuntu-22.04
     steps:
