@@ -4,10 +4,6 @@ on:
   push:
     tags:
       - '*'
-    branches-ignore:
-      - 'autodelivery**'
-      - 'bump-**'
-      - 'renovate/**'
     paths-ignore:
       - 'README.md'
       - 'CHANGELOG.md'
@@ -16,6 +12,7 @@ on:
       - '.mergify.yml'
       - 'renovate.json'
   pull_request:
+  workflow_dispatch:
 
 jobs:
   dispatcher:
