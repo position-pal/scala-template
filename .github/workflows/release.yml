@@ -40,6 +40,7 @@ jobs:
   docker:
     needs:
       - release
+    if: ${{ needs.release.outputs.release-status == 'released' }}
     uses: ./.github/workflows/docker.yml
     with:
       container_version: ${{ needs.release.outputs.container_version }}
