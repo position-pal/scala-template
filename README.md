@@ -3,8 +3,8 @@
 This template is a starting point for a Scala JVM project for PostionPal organition.
 
 ## Supported libs
-- Scala 3.6.1 
-- Scala Test 3.3.0
+- Scala 3.x
+- Scala Test
 
 ## Additional support
 - Scala extras plugin for additional support using ScalaFmt and ScalaFix
