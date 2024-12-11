@@ -4,6 +4,8 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 plugins {
     id("scala")
     alias(libs.plugins.scala.extras)
+    alias(libs.plugins.git.sensitive.semantic.versioning)
+    alias(libs.plugins.shadowJar)
 }
 
 allprojects {
@@ -12,6 +14,7 @@ allprojects {
     with(rootProject.libs.plugins) {
         apply(plugin = "scala")
         apply(plugin = scala.extras.get().pluginId)
+        apply(plugin = shadowJar.get().pluginId)
     }
 
     repositories {
@@ -36,4 +39,9 @@ allprojects {
             exceptionFormat = TestExceptionFormat.FULL
         }
     }
+}
+
+/* Set the project version based on the git history. */
+gitSemVer {
+    assignGitSemanticVersion()
 }
