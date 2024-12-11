@@ -52,19 +52,3 @@ jobs:
     uses: ./.github/workflows/cd.yml
     if: github.ref_name == github.event.repository.default_branch
     secrets: inherit
-
-  publish-doc:
-#    needs:
-#      - release
-    # Trigger this job only if the semantic release bot has released a new version
-    # if: ${{ needs.release.outputs.release-status == 'released' }}
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - name: Generate scaladoc
-        run: ./gradlew :aggregateScaladoc
-      - name: Publish on Github pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build/docs/aggregated-scaladoc
