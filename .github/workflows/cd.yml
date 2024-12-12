@@ -77,6 +77,6 @@ jobs:
       - name: Generate scaladoc
         run: ./gradlew :aggregateScaladoc
       - name: Publish on Github pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@15de0f09300eea763baee31dff6c6184995c5f6a # v4
         with:
           folder: build/docs/aggregated-scaladoc
