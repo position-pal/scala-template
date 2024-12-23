@@ -9,6 +9,8 @@ jobs:
     permissions: # Not specified scopes are set to `none`!
       packages: write
       contents: write
+      issues: write
+      pull-requests: write
     concurrency:
       group: release-and-delivery-${{ github.event.number || github.ref }}
     runs-on: ubuntu-24.04
@@ -34,7 +36,7 @@ jobs:
           npm install
           npx semantic-release
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.POSITION_PAL_BOT_TOKEN }}
 
   publish-images:
     needs:
@@ -74,6 +76,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-tags: true
       - name: Generate scaladoc
         run: ./gradlew :aggregateScaladoc
       - name: Publish on Github pages
