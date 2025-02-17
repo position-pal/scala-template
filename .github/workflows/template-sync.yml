@@ -20,7 +20,7 @@ jobs:
           # See https://github.com/AndreasAugustin/actions-template-sync#troubleshooting for more details.
           token: '${{ secrets.TEMPLATE_SYNC_PAT }}'
       - name: actions-template-sync
-        uses: AndreasAugustin/actions-template-sync@0fa0fe63d066890c68f92dd53eed9ca9e38487d1 # v2
+        uses: AndreasAugustin/actions-template-sync@bcb94410a4f1dffdfe5eaabc8234c3b8e76ebc5b # v2
         with:
           source_repo_path: position-pal/scala-template
           is_force_push_pr: true
