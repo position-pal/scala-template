@@ -1,3 +1,37 @@
+## [1.0.4](https://github.com/position-pal/scala-template/compare/1.0.3...1.0.4) (2025-03-06)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.scala-lang:scala3-library_3 to v3.6.4 ([#127](https://github.com/position-pal/scala-template/issues/127)) ([d1eec32](https://github.com/position-pal/scala-template/commit/d1eec3298cdce4a1baff72264070042784a13fad))
+* **deps:** update dependency gradle to v8.12.1 ([#102](https://github.com/position-pal/scala-template/issues/102)) ([d54a01b](https://github.com/position-pal/scala-template/commit/d54a01bb3911cc160b43d7fcc8a558b62d769b26))
+* **deps:** update dependency gradle to v8.13 ([#124](https://github.com/position-pal/scala-template/issues/124)) ([fe9688b](https://github.com/position-pal/scala-template/commit/fe9688b814c5fa165c3a6dc977f6b8bd937f3b14))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.121 ([#111](https://github.com/position-pal/scala-template/issues/111)) ([ae5e73f](https://github.com/position-pal/scala-template/commit/ae5e73f3830973d0805059198b24cba40b3ecf1a))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.122 ([#112](https://github.com/position-pal/scala-template/issues/112)) ([60a2c1f](https://github.com/position-pal/scala-template/commit/60a2c1f5e12919acb4ddc53fe47574ca685edf9a))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.123 ([#114](https://github.com/position-pal/scala-template/issues/114)) ([c309a66](https://github.com/position-pal/scala-template/commit/c309a664a6c0c072c0fe0dce8466e1b1997d9532))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.124 ([#115](https://github.com/position-pal/scala-template/issues/115)) ([e44380b](https://github.com/position-pal/scala-template/commit/e44380ba5846152a4e105fb0f529ef2483765ba9))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.125 ([#122](https://github.com/position-pal/scala-template/issues/122)) ([7fb3f45](https://github.com/position-pal/scala-template/commit/7fb3f455798b3fa04de7d5de57d3afdedf531c75))
+* **deps:** update junit5 monorepo to v1.12.0 ([#121](https://github.com/position-pal/scala-template/issues/121)) ([6e88cdf](https://github.com/position-pal/scala-template/commit/6e88cdfd31d80e5f6ccf909fedeed776e1120a95))
+* **deps:** update node.js to 22.14 ([#113](https://github.com/position-pal/scala-template/issues/113)) ([d53d28e](https://github.com/position-pal/scala-template/commit/d53d28eef31c3aeef6618e89356e673bc2ec95f9))
+* **deps:** update plugin com.gradle.develocity to v3.19.1 ([#106](https://github.com/position-pal/scala-template/issues/106)) ([514c7a9](https://github.com/position-pal/scala-template/commit/514c7a9f80cef60a9ef4faa0b7366a9f636a7d1d))
+* **deps:** update plugin com.gradle.develocity to v3.19.2 ([#118](https://github.com/position-pal/scala-template/issues/118)) ([96409d2](https://github.com/position-pal/scala-template/commit/96409d2b199ab6c9920e0134b2f8bf466f495670))
+* **deps:** update plugin git-sensitive-semantic-versioning to v3.1.10 ([#107](https://github.com/position-pal/scala-template/issues/107)) ([49397d9](https://github.com/position-pal/scala-template/commit/49397d994e32f0cb52bacc9854b1c33d262678ca))
+* **deps:** update plugin git-sensitive-semantic-versioning to v4 ([#109](https://github.com/position-pal/scala-template/issues/109)) ([5aa738e](https://github.com/position-pal/scala-template/commit/5aa738e22a166dfc3501b7f5da39d5f28a2c9e3d))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.20 ([#108](https://github.com/position-pal/scala-template/issues/108)) ([9912de4](https://github.com/position-pal/scala-template/commit/9912de46d11a1e9b797121a7699e198744077fb1))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.21 ([#123](https://github.com/position-pal/scala-template/issues/123)) ([001d92a](https://github.com/position-pal/scala-template/commit/001d92a3bb32897e4d185a2c3094586914e3c05a))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-java digest to 3a4f6e1 ([#104](https://github.com/position-pal/scala-template/issues/104)) ([add821e](https://github.com/position-pal/scala-template/commit/add821eb246dbe96509aa35a8b98dd47c08ab3ab))
+* **deps:** update actions/setup-node action to v4.2.0 ([#103](https://github.com/position-pal/scala-template/issues/103)) ([80756d1](https://github.com/position-pal/scala-template/commit/80756d133290197344c0b679b58e6ac90c0c245d))
+* **deps:** update andreasaugustin/actions-template-sync digest to 0fa0fe6 ([#105](https://github.com/position-pal/scala-template/issues/105)) ([1662741](https://github.com/position-pal/scala-template/commit/1662741a9ef737964dce04a497adc3fc99e7ad45))
+* **deps:** update andreasaugustin/actions-template-sync digest to bcb9441 ([#117](https://github.com/position-pal/scala-template/issues/117)) ([be3f020](https://github.com/position-pal/scala-template/commit/be3f020ede9e9fad7c660e6d646bc47252a51fd8))
+* **deps:** update docker/build-push-action digest to 0adf995 ([#120](https://github.com/position-pal/scala-template/issues/120)) ([c9ccbad](https://github.com/position-pal/scala-template/commit/c9ccbad3e49aa1bca08466a6782915d77dc5af54))
+* **deps:** update docker/build-push-action digest to 471d1dc ([#125](https://github.com/position-pal/scala-template/issues/125)) ([4f43c34](https://github.com/position-pal/scala-template/commit/4f43c34478702d7b2e0ab0ff1210f8f5602c3c7f))
+* **deps:** update docker/build-push-action digest to ca877d9 ([#101](https://github.com/position-pal/scala-template/issues/101)) ([82daf08](https://github.com/position-pal/scala-template/commit/82daf0871c0fa1160d7cd07ba23c2448d7c6ff13))
+* **deps:** update docker/setup-buildx-action digest to b5ca514 ([#126](https://github.com/position-pal/scala-template/issues/126)) ([0744890](https://github.com/position-pal/scala-template/commit/0744890b28d67e5cd0f47bc2892b7470dbba716d))
+* **deps:** update docker/setup-buildx-action digest to f7ce87c ([#110](https://github.com/position-pal/scala-template/issues/110)) ([9688b33](https://github.com/position-pal/scala-template/commit/9688b337cae7e71718278482cfcea4fbabaa1df9))
+* **deps:** update jamesives/github-pages-deploy-action digest to 6c2d9db ([#119](https://github.com/position-pal/scala-template/issues/119)) ([42bd54e](https://github.com/position-pal/scala-template/commit/42bd54e4ea053b707cb719b687d4a3a21f65730d))
+
 ## [1.0.3](https://github.com/position-pal/scala-template/compare/1.0.2...1.0.3) (2025-01-17)
 
 ### Dependency updates
