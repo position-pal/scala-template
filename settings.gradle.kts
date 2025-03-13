@@ -6,7 +6,7 @@ plugins {
 rootProject.name = "scala-template"
 
 include(
-    "core",
+    "entrypoint",
 )
 
 develocity {

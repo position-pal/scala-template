@@ -1,12 +1,7 @@
-FROM openjdk:21-slim@sha256:7072053847a8a05d7f3a14ebc778a90b38c50ce7e8f199382128a53385160688
+FROM eclipse-temurin:21@sha256:d59ca4960a17035592a5c928343ba56862ea6067929da4e776d7a0f4ec26aa44
 
-RUN apt-get update && apt-get install -y findutils && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
 
-WORKDIR /service
-COPY ./ /service
+COPY ./entrypoint/build/libs/*-all.jar app.jar
 
-# Set permissions to gradlew
-RUN chmod +x gradlew
-RUN ./gradlew
-
-CMD ["./gradlew", "run"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
