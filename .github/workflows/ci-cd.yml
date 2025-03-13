@@ -41,7 +41,7 @@ jobs:
 
   dry-delivery:
     needs: build
-    if: false # uncomment this line to enable the condition
+    if: false # uncomment this line to enable the job
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
