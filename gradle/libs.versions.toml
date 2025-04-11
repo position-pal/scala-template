@@ -1,7 +1,7 @@
 [versions]
 scala = "3.6.4"
 scalatest = "3.3.0-SNAP4"
-junit = "1.12.1"
+junit = "1.12.2"
 
 [libraries]
 scala-library = { module = "org.scala-lang:scala3-library_3", version.ref = "scala" }
