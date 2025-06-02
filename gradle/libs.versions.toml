@@ -1,5 +1,5 @@
 [versions]
-scala = "3.7.0"
+scala = "3.7.1"
 scalatest = "3.3.0-SNAP4"
 junit = "1.13.0"
 
