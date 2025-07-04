@@ -15,5 +15,5 @@ scala-testing = [ "scalatest", "junit-platform-engine", "junit-platform-launcher
 
 [plugins]
 scala-extras = "io.github.tassiluca.gradle-scala-extras:3.13.0"
-git-sensitive-semantic-versioning = "org.danilopianini.git-sensitive-semantic-versioning:5.1.6"
+git-sensitive-semantic-versioning = "org.danilopianini.git-sensitive-semantic-versioning:5.1.7"
 shadowJar = "com.github.johnrengelman.shadow:8.1.1"
