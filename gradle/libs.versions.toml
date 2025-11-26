@@ -14,6 +14,6 @@ junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher
 scala-testing = [ "scalatest", "junit-platform-engine", "junit-platform-launcher", "scalatestplus-junit5" ]
 
 [plugins]
-scala-extras = "io.github.tassiluca.gradle-scala-extras:3.15.0"
+scala-extras = "io.github.tassiluca.gradle-scala-extras:3.16.0"
 git-sensitive-semantic-versioning = "org.danilopianini.git-sensitive-semantic-versioning:6.0.2"
 shadowJar = "com.github.johnrengelman.shadow:8.1.1"
